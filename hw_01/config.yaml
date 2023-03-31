@@ -1,0 +1,88 @@
+    # Project definitions (do not edit)
+Task: hw_01
+scorer: szc
+date: Mar7
+multianimalproject: false
+identity:
+
+    # Project path (change when moving around)
+project_path: G:\new\dlc\2d\hw_01-szc-2023-03-07
+
+    # Annotation data set configuration (and individual video cropping parameters)
+video_sets:
+  G:\new\dlc\2d\hw_01-szc-2023-03-07\videos\c1_rat.mp4:
+    crop: 0, 1920, 0, 1080
+  G:\new\dlc\2d\hw_01-szc-2023-03-07\videos\c2_rat.mp4:
+    crop: 0, 1920, 0, 1080
+bodyparts:
+- nose1
+- leftear2
+- rightear3
+- back4
+- leftfleg5
+- rightfleg6
+- leftbleg7
+- rightbleg8
+- tailbase9
+- tailmiddle10
+- tailtip11
+
+    # Fraction of video to start/stop when extracting frames for labeling/refinement
+
+    # Fraction of video to start/stop when extracting frames for labeling/refinement
+start: 0
+stop: 1
+numframes2pick: 200
+
+    # Plotting configuration
+skeleton:
+- - nose1
+  - leftear2
+- - nose1
+  - rightear3
+- - leftear2
+  - back4
+- - rightear3
+  - back4
+- - leftfleg5
+  - back4
+- - rightfleg6
+  - back4
+- - leftbleg7
+  - back4
+- - rightbleg8
+  - back4
+- - back4
+  - tailbase9
+- - tailbase9
+  - tailmiddle10
+- - tailmiddle10
+  - tailtip11
+skeleton_color: black
+pcutoff: 0.6
+dotsize: 5
+alphavalue: 0.7
+colormap: rainbow
+
+    # Training,Evaluation and Analysis configuration
+TrainingFraction:
+- 0.8
+iteration: 0
+default_net_type: resnet_50
+default_augmenter: default
+snapshotindex: -1
+batch_size: 8
+
+    # Cropping Parameters (for analysis and outlier frame detection)
+cropping: false
+    #if cropping is true for analysis, then set the values here:
+x1: 0
+x2: 640
+y1: 277
+y2: 624
+
+    # Refinement configuration (parameters from annotation dataset configuration also relevant in this stage)
+corner2move2:
+- 50
+- 50
+move2corner: true
